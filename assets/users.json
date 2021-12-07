@@ -1,53 +1,53 @@
 {
-    "User": [
+    "Users": [
         {
-            "Name": "Marco",
-            "Cognomee": "Piervilla",
+            "Nome": "Marco",
+            "Cognome": "Piervilla",
             "User": "Marco_Pier"
         },
         {
-            "Name": "Marco",
-            "Cognomee": "Piertutto",
+            "Nome": "Marco",
+            "Cognome": "Piertutto",
             "User": "Marco Tutto"
         },
         {
-            "Name": "Giulia",
-            "Cognomee": "Macchia",
+            "Nome": "Giulia",
+            "Cognome": "Macchia",
             "User": "Macchigiuly"
         },
         {
-            "Name": "Sara",
-            "Cognomee": "Caligola",
+            "Nome": "Sara",
+            "Cognome": "Caligola",
             "User": "Sara Caligola"
         },
         {
-            "Name": "Giorgio",
-            "Cognomee": "Fadel",
+            "Nome": "Giorgio",
+            "Cognome": "Fadel",
             "User": "GiorgioFade"
         },
         {
-            "Name": "Giorgia",
-            "Cognomee": "Castagna",
+            "Nome": "Giorgia",
+            "Cognome": "Castagna",
             "User": "CastaGio"
         },
         {
-            "Name": "Marco",
-            "Cognomee": "Caserto",
+            "Nome": "Marco",
+            "Cognome": "Caserto",
             "User": "MCas"
         },
         {
-            "Name": "Pietra",
-            "Cognomee": "Martello",
+            "Nome": "Pietra",
+            "Cognome": "Martello",
             "User": "MartePietra"
         },
         {
-            "Name": "Giorgia",
-            "Cognomee": "Murtadell",
+            "Nome": "Giorgia",
+            "Cognome": "Murtadell",
             "User": "aigroiG"
         },
         {
-            "Name": "Marco",
-            "Cognomee": "Piervilla",
+            "Nome": "Marco",
+            "Cognome": "Piervilla",
             "User": "Marco_Pier"
         }
 
