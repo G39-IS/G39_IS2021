@@ -59,7 +59,7 @@ app.listen(8080, () => {
 
 /**
  * @swagger
- * /api/usersearch:User:
+ * /api/usersearch/{user}:
  *   get:
  *     summary: Retrieve a signle User.
  *     description: etrieve a signle User from the Server.
@@ -80,7 +80,7 @@ app.listen(8080, () => {
  *                         type: integer
  *                         description: The User Name.
  *                         example: Giovanna
- *                       Cognoome:
+ *                       Cognome:
  *                         type: string
  *                         description: The User Surname.
  *                         example: Barotti
@@ -92,15 +92,56 @@ app.listen(8080, () => {
 app.get('/api/usersearch:user', (request, response) => {
     var data = fs.readFileSync('../assets/users.json');
     var myObject = JSON.parse(data);
-    var returnObj;
-    for (let [i, us] of myObject.Users.entries()) {
+    
+    for (let us of myObject.Users.entries()) {
 
         if (us.User == request.params.user) {
-            returnObj = JSON.parse(us);
+
+            
         }
     }
 
-    response.send(returnObj);
+    response.send(us);
 
 })
 
+
+/**
+ * @swagger
+ * /api/user:
+ *   get:
+ *     summary: Retrieve a list of products.
+ *     description: Retrieve a list of produdct from the Server.
+ *     responses:
+ *       200:
+ *         description: A list of products.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                        Nome:
+ *                         type: integer
+ *                         description: The User Name.
+ *                         example: Giovanna
+ *                       Cognome:
+ *                         type: string
+ *                         description: The User Surname.
+ *                         example: Barotti
+ *                       User:
+ *                          type: string
+ *                          description: The User username
+ *                          example: calligalli
+ */
+ app.get('/api/user', (request, response) => {
+    var data = fs.readFileSync('../assets/users.json');
+    var myObject = JSON.parse(data);
+
+    response.send(myObject);
+
+})
