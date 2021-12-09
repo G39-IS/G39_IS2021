@@ -1,0 +1,38 @@
+{
+    "Eventi": [
+        {
+            "Data": "10/01/2022",
+            "Titolo": "Esame di Ingegneria del Software",
+            "Priorità": "alta",
+            "Categoria": "Impegno scolastico",
+            "Descrizione": "Presentazione del progetto",
+            "Fascia oraria": "Tutto il giorno",
+            "Frequenza": "una volta",
+            "Frequenza notifica": "Mai",
+            "Lista amici": null,
+            "Messaggio automatico": null,
+            "Numero di telefono": null,
+            "Testo": null,
+            "Orario": null
+            "Fusi-orari": "disattivato";
+        },
+        
+        {
+            "Data": "08/02/2022",
+            "Titolo": "Compleanno di Piergiorgio",
+            "Priorità": "bassa",
+            "Categoria": "Compleanno",
+            "Descrizione": "Festa al Bar Sport",
+            "Fascia oraria": "19:00-21:00",
+            "Frequenza": "una volta",
+            "Frequenza notifica": "Mai",
+            "Lista amici": null,
+            "Messaggio automatico": null,
+            "Numero di telefono": null,
+            "Testo": null,
+            "Orario": null
+            "Fusi-orari": "disattivato";
+        }
+
+    ]
+}
