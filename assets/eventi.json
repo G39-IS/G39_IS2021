@@ -13,8 +13,8 @@
             "Messaggio automatico": null,
             "Numero di telefono": null,
             "Testo": null,
-            "Orario": null
-            "Fusi-orari": "disattivato";
+            "Orario": null,
+            "Fusi-orari": "disattivato"
         },
         
         {
@@ -30,8 +30,8 @@
             "Messaggio automatico": null,
             "Numero di telefono": null,
             "Testo": null,
-            "Orario": null
-            "Fusi-orari": "disattivato";
+            "Orario": null,
+            "Fusi-orari": "disattivato"
         }
 
     ]
