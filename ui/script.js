@@ -82,9 +82,15 @@ function home() {
 
 function colormode() {
     if (document.getElementById("mySwitch").checked == false) {
+        var request = new XMLHttpRequest();
+        request.open('POST', 'http://localhost:8080/api/impostazione_dark/false', true);
+        request.send();
         document.getElementById("style").setAttribute('href', 'styleLight.css');
         document.getElementById("lab_mode").innerHTML = "Light Mode";
     } else {
+        var request = new XMLHttpRequest();
+        request.open('POST', 'http://localhost:8080/api/impostazione_dark/true', true);
+        request.send();
         document.getElementById("style").setAttribute('href', 'styleDark.css');
         document.getElementById("lab_mode").innerHTML = "Dark Mode";
     }
