@@ -5,7 +5,10 @@
     font-size:30px;
     font-weight: bold;
   }
-    
+  .mode{
+      background-color: #596675;
+      color: white;
+  }
   
   .dropdown {
     position: relative;
