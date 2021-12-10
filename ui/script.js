@@ -1,6 +1,33 @@
+window.onload= dark_mode();
+
+function dark_mode(){
+    var request = new XMLHttpRequest();
+    request.open('GET', 'http://localhost:8080/api/impostazioni', true);
+    request.onload = function () {
+           // Begin accessing JSON data here
+           var data = JSON.parse(this.response);
+           if (request.status >= 200 && request.status < 400) {
+               data.Impostazioni.forEach(impostazione => {
+
+   
+                   if (impostazione.Dark == "true") {
+                    document.getElementById("style").setAttribute('href', 'styleDark.css');
+                   } else {
+                    document.getElementById("style").setAttribute('href', 'styleLight.css');
+                   }
+
+               });
+           } else {
+               const errorMessage = document.createElement('marquee');
+               errorMessage.textContent = `THE API IS NOT WORKING!`;
+               app.appendChild(errorMessage);
+           }
+       }
+   
+       request.send();
+}
+
 function impostazioni() {
-
-
 
     var request = new XMLHttpRequest();
     request.open('GET', 'http://localhost:8080/api/impostazioni', true);
@@ -98,8 +125,14 @@ function colormode() {
 
 function notifiche() {
     if (document.getElementById("myNotifiche").checked == true) {
+        var request = new XMLHttpRequest();
+        request.open('POST', 'http://localhost:8080/api/impostazione_notifica/true', true);
+        request.send();
         document.getElementById("lab_notifiche").innerHTML = "Notifiche On";
     } else {
+        var request = new XMLHttpRequest();
+        request.open('POST', 'http://localhost:8080/api/impostazione_notifica/false', true);
+        request.send();
         document.getElementById("lab_notifiche").innerHTML = "Notifiche Off";
     }
 }
