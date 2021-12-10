@@ -89,19 +89,19 @@ app.listen(8080, () => {
  *                          description: The User username
  *                          example: calligalli
  */
-app.get('/api/usersearch:user', (request, response) => {
-    var data = fs.readFileSync('../assets/users.json');
+app.get('/api/userbyn/:user', (request, response) => {
+    var data = fs.readFileSync('../assets/users.json', 'utf8');
     var myObject = JSON.parse(data);
-    
-    for (let us of myObject.Users.entries()) {
 
-        if (us.User == request.params.user) {
 
-            
-        }
+   for (let [i, us] of myObject.Users.entries()) {
+
+    if (us.User == request.params.user) {
+        response.send(us);
     }
+}
 
-    response.send(us);
+   console.log("success");
 
 })
 
