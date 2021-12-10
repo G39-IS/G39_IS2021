@@ -190,3 +190,40 @@ app.get('/api/userbyn/:user', (request, response) => {
     response.send(myObject);
 
 })
+
+
+/**
+ * @swagger
+ * /api/impostazoine_dark/{value}:
+ *   put:
+ *     summary: Update dark mode.
+ *     parameters:
+ *       - in: path
+ *         name: alue
+ *         schema:
+ *             type: string
+ *         required: true
+ *         description: the product value
+ *     responses:
+ *       200:
+ *         description: the product was update
+ *       404:
+ *         description: the product was not found
+*/
+app.post('/api/impostazione_dark/:value', (request, response) => {
+    var data = fs.readFileSync('../assets/impostazioni.json');
+    var myObject = JSON.parse(data);
+  
+    myObject.Impostazioni[0].Dark=request.params.value;
+
+    //memorizzo il nuovo JSON dopo la cancellazione
+    var newData = JSON.stringify(myObject);
+    console.log(newData);
+    fs.writeFile('../assets/impostazioni.json', newData, err => {
+        // error checking
+        if (err) throw err;
+    });
+    response.json("Update Successfully: " + myObject.Impostazioni.length);
+})
+
+
