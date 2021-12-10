@@ -77,7 +77,7 @@ app.listen(8080, () => {
  *                     type: object
  *                     properties:
  *                       Nome:
- *                         type: integer
+ *                         type: string
  *                         description: The User Name.
  *                         example: Giovanna
  *                       Cognome:
@@ -110,11 +110,11 @@ app.get('/api/userbyn/:user', (request, response) => {
  * @swagger
  * /api/user:
  *   get:
- *     summary: Retrieve a list of products.
- *     description: Retrieve a list of produdct from the Server.
+ *     summary: Retrieve a list of users.
+ *     description: Retrieve a list of users from the Server.
  *     responses:
  *       200:
- *         description: A list of products.
+ *         description: A list of users.
  *         content:
  *           application/json:
  *             schema:
@@ -126,7 +126,7 @@ app.get('/api/userbyn/:user', (request, response) => {
  *                     type: object
  *                     properties:
  *                        Nome:
- *                         type: integer
+ *                         type: string
  *                         description: The User Name.
  *                         example: Giovanna
  *                       Cognome:

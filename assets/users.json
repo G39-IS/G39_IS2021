@@ -1,54 +1,104 @@
 {
     "Users": [
         {
+            "ID" : 1,
             "Nome": "Marco",
             "Cognome": "Piervilla",
-            "User": "Marco_Pier"
+            "User": "Marco_Pier",
+            "Password":"pswd",
+            "E-mail":"email@email.e",
+            "Seguiti" : 2,
+            "Follower" : 1
         },
         {
+            "ID" : 2,
             "Nome": "Marco",
             "Cognome": "Piertutto",
-            "User": "Marco Tutto"
+            "User": "Marco Tutto",
+            "Password":"pswd",
+            "E-mail":"email@email.e",
+            "Seguiti" : 1,
+            "Follower" : 10
         },
         {
+            "ID" : 3,
             "Nome": "Giulia",
             "Cognome": "Macchia",
-            "User": "Macchigiuly"
+            "User": "Macchigiuly",
+            "Password":"pswd",
+            "E-mail":"email@email.e",
+            "Seguiti" : 10,
+            "Follower" : 1
         },
         {
+            "ID" : 4,
             "Nome": "Sara",
             "Cognome": "Caligola",
-            "User": "Sara Caligola"
+            "User": "Sara Caligola",
+            "Password":"pswd",
+            "E-mail":"email@email.e",
+            "Seguiti" : 10,
+            "Follower" : 1
         },
         {
+            "ID" : 5,
             "Nome": "Giorgio",
             "Cognome": "Fadel",
-            "User": "GiorgioFade"
+            "User": "GiorgioFade",
+            "Password":"pswd",
+            "E-mail":"email@email.e",
+            "Seguiti" : 1,
+            "Follower" : 10
         },
         {
+            "ID" : 6,
             "Nome": "Giorgia",
             "Cognome": "Castagna",
-            "User": "CastaGio"
+            "User": "CastaGio",
+            "Password":"pswd",
+            "E-mail":"email@email.e",
+            "Seguiti" : 10,
+            "Follower" : 1
         },
         {
+            "ID" : 7,
             "Nome": "Marco",
             "Cognome": "Caserto",
-            "User": "MCas"
+            "User": "MCas",
+            "Password":"pswd",
+            "E-mail":"email@email.e",
+            "Seguiti" : 1,
+            "Follower" : 10
         },
         {
+            "ID" : 8,
             "Nome": "Pietra",
             "Cognome": "Martello",
-            "User": "MartePietra"
+            "User": "MartePietra",
+            "Password":"pswd",
+            "E-mail":"email@email.e",
+            "Seguiti" : 10,
+            "Follower" : 1
         },
         {
+            "ID" : 9,
             "Nome": "Giorgia",
             "Cognome": "Murtadell",
-            "User": "aigroiG"
+            "User": "aigroiG",
+            "Password":"pswd",
+            "E-mail":"email@email.e",
+            "Seguiti" : 1,
+            "Follower" : 10
         },
         {
+            "ID" : 10,
             "Nome": "Marco",
             "Cognome": "Piervilla",
-            "User": "Marco_Pier"
+            "User": "Marco_Pier",
+            "Password":"pswd",
+            "E-mail":"email@email.e",
+            "Seguiti" : 10,
+            "Follower" : 1
         }
 
     ]
