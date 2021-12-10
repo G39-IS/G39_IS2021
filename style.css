@@ -4,10 +4,6 @@
     font-family: Calibri;
     font-size:30px;
     font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-    height: 40px;
-    padding-top: 5px;
   }
     
   
@@ -36,3 +32,8 @@
   .dropdown-content a:hover {background-color: #b0c4de;}
   
   .dropdown:hover .dropdown-content {display: block;}
+
+  .btn{
+      background-color: whitesmoke;
+      color: black;
+  }
