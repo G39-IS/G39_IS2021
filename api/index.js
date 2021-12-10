@@ -145,3 +145,48 @@ app.get('/api/userbyn/:user', (request, response) => {
     response.send(myObject);
 
 })
+
+
+/**
+ * @swagger
+ * /api/impostazioni:
+ *   get:
+ *     summary: Retrieve the list of impostations.
+ *     description: Retrieve the list of impostations.
+ *     responses:
+ *       200:
+ *         description: A list of impostations.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                        Nome:
+ *                         type: string
+ *                         description: Darkmode.
+ *                         example: true
+ *                       Cognome:
+ *                         type: string
+ *                         description: impostazioni.
+ *                         example: false
+ *                       User:
+ *                          type: string
+ *                          description: Lingua
+ *                          example: Italiano
+ *                       User:
+ *                          type: array
+ *                          items: string
+ *                          example: calligalli
+ */
+ app.get('/api/impostazioni', (request, response) => {
+    var data = fs.readFileSync('../assets/impostazioni.json');
+    var myObject = JSON.parse(data);
+
+    response.send(myObject);
+
+})
