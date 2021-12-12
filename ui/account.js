@@ -1,5 +1,6 @@
 const account={template:`
 <div>
+<div class="header1 row d-flex justify-content-center">ACCOUNT</div>
 <input type="text" id="name" onkeyup="myFunction()" placeholder="Cerca altri utenti...">
 <center><h1><i>Ciao, Mario Rossi!</i></h1></center>
 <center><h2>Il tuo username: <b>ABC123</b></h2></center>
