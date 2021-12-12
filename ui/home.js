@@ -1,1 +1,16 @@
-const home={template:`<h1>Home</h1>`}
+const home={template:`
+<div>
+<h1>Benvenuti nella casa dei widget</h1>
+<h2>Al momento ci vivono solo le immagini :-(</h2>
+<img src="widget1.png">
+<br><br>
+<img src="widget2.png">
+<br><br>
+<button>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+</svg>
+</button>
+</div>
+
+`}
