@@ -1,35 +1,40 @@
 <!DOCTYPE html>
+
 <head>
-<title> TimeGift App </title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styleDark.css" id="style">
+    <title> TimeGift App </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleDark.css" id="style">
 </head>
+
 <body>
 
-    <div id="app" class="container"> <!--ho rimosso il dropdown menu, perché il router-links non erano visibili all'interno-->
+    <div id="app" class="container">
+        <!--ho rimosso il dropdown menu, perché il router-links non erano visibili all'interno-->
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <ul class="navbar-nav">
-            <li class="nav-item m-1">
-                <router-link class="btn btn-light btn-outline-dark btn-sm" to="/home">Home</router-link>
-            </li>
-            <li class="nav-item m-1">
-                <router-link class="btn btn-light btn-outline-dark btn-sm" to="/calendario">Calendario</router-link>
-            </li>
-            <li class="nav-item m-1">
-                <router-link class="btn btn-light btn-outline-dark btn-sm" to="/account">Account</router-link>
-            </li>
-            <li class="nav-item m-1">
-                <router-link class="btn btn-light btn-outline-dark btn-sm" to="/ricerca">Ricerca</router-link>
-            </li>
-            <li class="nav-item m-1">
-                <router-link class="btn btn-light btn-outline-dark btn-sm" to="/impostazioni">Impostazioni</router-link>
-            </li>
+                <li class="nav-item m-1">
+                    <router-link class="btn btn-light btn-outline-dark btn-sm" to="/home">Home</router-link>
+                </li>
+                <li class="nav-item m-1">
+                    <router-link class="btn btn-light btn-outline-dark btn-sm" to="/calendario">Calendario</router-link>
+                </li>
+                <li class="nav-item m-1">
+                    <router-link class="btn btn-light btn-outline-dark btn-sm" to="/account">Account</router-link>
+                </li>
+                <li class="nav-item m-1">
+                    <router-link class="btn btn-light btn-outline-dark btn-sm" to="/ricerca">Ricerca</router-link>
+                </li>
+                <li class="nav-item m-1">
+                    <router-link class="btn btn-light btn-outline-dark btn-sm" to="/impostazioni">Impostazioni
+                    </router-link>
+                </li>
             </ul>
         </nav>
-<h1 class="d-flex justify-content-center"> TimeGift App </h1>
-<h3 class="d-flex justify-content-center">Your friendly reminder</h3>
-<hr>
+        <h1 class="d-flex justify-content-center"> TimeGift App </h1>
+        <h3 class="d-flex justify-content-center">Your friendly reminder</h3>
+        <hr>
         <router-view></router-view>
     </div>
 
@@ -44,7 +49,10 @@
     <script src="ricerca.js"></script>
     <script src="impostazioni.js"></script>
     <script src="app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
