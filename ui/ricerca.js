@@ -1,0 +1,1 @@
+const ricerca={template:`<h1>Ricerca</h1>`}

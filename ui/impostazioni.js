@@ -1,0 +1,1 @@
+const impostazioni={template:`<h1>Impostazioni</h1>`}

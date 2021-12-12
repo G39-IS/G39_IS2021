@@ -1,0 +1,1 @@
+const account={template:`<h1>Account</h1>`}
