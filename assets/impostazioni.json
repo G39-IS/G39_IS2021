@@ -1,14 +1,1 @@
-{
-    "Impostazioni": [
-        {
-            "Dark": "false",
-            "Notifiche": "false",
-            "Lingua": "Italiano",
-            "Categoria": [
-               { "cat" : "giochi","col":"green"},
-               { "cat" :"scuola","col":"yellow"},
-               {"cat" :"Elisa","col":"red"}
-            ]
-        }
-    ]
-}
+{"Impostazioni":[{"Dark":"true","Notifiche":"true","Lingua":"Italiano","Categoria":["giochi","scuola","Elisa"]}]}
