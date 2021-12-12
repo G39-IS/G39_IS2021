@@ -1,1 +1,1 @@
-const calendario={template:`<h1>Calendario</h1>`}
+const calendario={template:`<div class="header1 row d-flex justify-content-center">CALENDARIO</div>`}
