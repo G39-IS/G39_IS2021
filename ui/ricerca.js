@@ -1,1 +1,1 @@
-const ricerca={template:`<h1>Ricerca</h1>`}
+const ricerca={template:`<div class="header1 row d-flex justify-content-center">RICERCA</div>`}
