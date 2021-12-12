@@ -26,3 +26,4 @@ function dark_mode(){
    
        request.send();
 }
+
