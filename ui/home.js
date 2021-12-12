@@ -1,5 +1,6 @@
 const home={template:`
 <div>
+<div class="header1 row d-flex justify-content-center">HOME</div>
 <h1>Benvenuti nella casa dei widget</h1>
 <h2>Al momento ci vivono solo le immagini :-(</h2>
 <img src="widget1.png">
