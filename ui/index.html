@@ -1,29 +1,50 @@
 <!DOCTYPE html>
-<html>
-
 <head>
-  <title> TimeGift App </title>
+<title> TimeGift App </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styleDark.css" id="style">
-  <script src="script.js"></script>
 </head>
+<body>
 
-<body class="mode">
-  <div class="dropdown">
-    <button><img src="https://img.icons8.com/ios-filled/50/000000/menu--v1.png" /></button>
-    <!--<a href="https://icons8.com/icon/8113/menu">Menu icon by Icons8</a>-->
-    <div class="dropdown-content">
-      <a href="#" onclick="home()" id="home">HOME</a>
-      <a href="#"  onclick="calendario()" id="calendario">CALENDARIO</a>
-      <a href="#"  onclick="account()" id="account">ACCOUNT</a>
-      <a href="#"  onclick="ricerca()" id="ricerca">RICERCA</a>
-      <a href="#"  onclick="impostazioni()" id="impostazioni">IMPOSTAZIONI</a>
+    <div id="app" class="container"> <!--ho rimosso il dropdown menu, perché il router-links non erano visibili all'interno-->
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <ul class="navbar-nav">
+            <li class="nav-item m-1">
+                <router-link class="btn btn-light btn-outline-dark btn-sm" to="/home">Home</router-link>
+            </li>
+            <li class="nav-item m-1">
+                <router-link class="btn btn-light btn-outline-dark btn-sm" to="/calendario">Calendario</router-link>
+            </li>
+            <li class="nav-item m-1">
+                <router-link class="btn btn-light btn-outline-dark btn-sm" to="/account">Account</router-link>
+            </li>
+            <li class="nav-item m-1">
+                <router-link class="btn btn-light btn-outline-dark btn-sm" to="/ricerca">Ricerca</router-link>
+            </li>
+            <li class="nav-item m-1">
+                <router-link class="btn btn-light btn-outline-dark btn-sm" to="/impostazioni">Impostazioni</router-link>
+            </li>
+            </ul>
+        </nav>
+<h1 class="d-flex justify-content-center"> TimeGift App </h1>
+<h3 class="d-flex justify-content-center">Your friendly reminder</h3>
+<hr>
+        <router-view></router-view>
     </div>
-  </div>
-  <section id="contenuto">
-    <div class="header1 row d-flex justify-content-center">HOME</div>
-  </section>
-</body>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="/path/to/vue.js"></script>
+    <script src="/path/to/vue-router.js"></script>
+    <script src="home.js"></script>
+    <script src="calendario.js"></script>
+    <script src="account.js"></script>
+    <script src="ricerca.js"></script>
+    <script src="impostazioni.js"></script>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
 </html>
