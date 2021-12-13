@@ -76,10 +76,6 @@ const impostazioni = {
    
 `,
 
-
-
-
-
     data() {
         return {
             mode: false,
@@ -122,14 +118,14 @@ const impostazioni = {
 
                 axios.post('http://localhost:8080/api/impostazione_dark/false')
                     .then((response) => {
-                        document.getElementById("style").setAttribute('href', 'styleLight.css');
+                        //document.getElementById("style").setAttribute('href', 'styleLight.css');
                         this.modalita = "Light Mode";
                     });
 
             } else {
                 axios.post('http://localhost:8080/api/impostazione_dark/true')
                     .then((response) => {
-                        document.getElementById("style").setAttribute('href', 'styleLight.css');
+                        //document.getElementById("style").setAttribute('href', 'styleDark.css');
                         this.modalita = "Dark Mode";
                     });
             }

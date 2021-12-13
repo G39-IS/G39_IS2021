@@ -59,7 +59,7 @@ app.listen(8080, () => {
 
 /**
  * @swagger
- * /api/usersearch/{user}:
+ * /api/userbyus/{user}:
  *   get:
  *     summary: Retrieve a signle User.
  *     description: etrieve a signle User from the Server.
@@ -89,7 +89,7 @@ app.listen(8080, () => {
  *                          description: The User username
  *                          example: calligalli
  */
-app.get('/api/userbyn/:user', (request, response) => {
+app.get('/api/userbyus/:user', (request, response) => {
     var data = fs.readFileSync('../assets/users.json', 'utf8');
     var myObject = JSON.parse(data);
 
@@ -104,6 +104,55 @@ app.get('/api/userbyn/:user', (request, response) => {
    console.log("success");
 
 })
+
+/**
+ * @swagger
+ * /api/userbyid/{id}:
+ *   get:
+ *     summary: Retrieve a signle User.
+ *     description: etrieve a signle User from the Server.
+ *     responses:
+ *       200:
+ *         description: A User informations.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       Nome:
+ *                         type: string
+ *                         description: The User Name.
+ *                         example: Giovanna
+ *                       Cognome:
+ *                         type: string
+ *                         description: The User Surname.
+ *                         example: Barotti
+ *                       User:
+ *                          type: string
+ *                          description: The User username
+ *                          example: calligalli
+ */        
+ app.get('/api/userbyid/:id', (request, response) => {
+    var data = fs.readFileSync('../assets/users.json', 'utf8');
+    var myObject = JSON.parse(data);
+
+
+   for (let [i, us] of myObject.Users.entries()) {
+
+    if (us.ID == request.params.id) {
+        response.send(us);
+    }
+}
+
+   console.log("success");
+
+})
+
 
 
 /**
