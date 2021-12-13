@@ -7,6 +7,10 @@ const account={template:`
     </form>
     
     <center><h1><i>Ciao, {{nome}} {{cognome}}!</i></h1></center>
+    <div class="row ">
+        <div class="col"><div class="row text-center"><h2>Seguiti</h2></div><div class="row text-center"><h2>{{seguiti}}</h2></div></div>
+        <div class="col"><div class="row text-center"><h2>Follower</h2></div><div class="row text-center"><h2>{{follower}}</h2></div></div>
+    </div>
     <center><h2>Il tuo username: <b>{{user}}</b></h2></center>
     <br>
     <center><button type="button" class="btn btn-secondary btn-lg btn-block">Lista desideri</button></center>
@@ -22,7 +26,9 @@ const account={template:`
         return {
             user: "",
             cognome: "",
-            nome: ""
+            nome: "",
+            seguiti: 0,
+            follower: 0
         }
     },
     methods: {
@@ -32,6 +38,8 @@ const account={template:`
                             this.user = response.data.User;
                             this.cognome =  response.data.Cognome;
                             this.nome =  response.data.Nome;
+                            this.seguiti = response.data.Seguiti;
+                            this.follower = response.data.Follower;
                        
                 });
 

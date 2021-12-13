@@ -54,14 +54,15 @@ const impostazioni = {
                                 <div class="modal-body">
                                 <form>
                                 <div class="row">
-                                    <input type="text" class="form-control-plaintext" placeholder="Inserisci qui la categoria">
+                                    <input type="text" class="form-control-plaintext" placeholder="Inserisci qui la categoria" required>
                                 </div>
-            
-                            </div>
-                                <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
-                                </div>
+                                 <div class="row"><button type="submit" class="btn btn-primary">Save changes</button></div>
                                 </form>
+                            </div>
+                                
+                                   
+                                
+                               
                             </div>
                         </div>
                     </div>
