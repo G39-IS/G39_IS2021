@@ -6,7 +6,7 @@ const impostazioni = {
 
         <div class="row pt-2 m-1"> 
             <div class="col-8"><a >Elimina Account</a></div>
-            <div class="col"><button type="button" class="btn">Elimina</button></div>
+            <div class="col"><button type="button" class="btn" >Elimina</button></div>
         </div>
 
         <div class="row pt-2 m-1">
@@ -25,19 +25,47 @@ const impostazioni = {
             </div>
             </div>
             <div class="row pt-2 m-1">
-            <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                Categorie Personalizzate
-            </button>
-            <ul class="dropdown-menu">
-                <li v-for="cat in categoria">
-                    <div class="row p-1">
-                        <div class="col-7"><a>{{cat}}</a></div>
-                        <div class="col"><a class="dropdown-item"><i class="icofont-trash"></i></a></div>
+                <div class="col-8">
+                    <button class="btn p-0 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:transparent;">
+                        Categorie Personalizzate
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li v-for="cat in categoria">
+                            <div class="row p-1">
+                                <div class="col-7"><a>{{cat}}</a></div>
+                                <div class="col"><a class="dropdown-item"><i class="icofont-trash"></i></a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col p-0">
+                    <button type="button" style="border-style:none; background-color:transparent;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="icofont-plus icofont-2x"></i>
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="AddCategory" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Aggiungi Categoria</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                <form>
+                                <div class="row">
+                                    <input type="text" class="form-control-plaintext" placeholder="Inserisci qui la categoria">
+                                </div>
+            
+                            </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                </li>
-            </ul>
-            </div>
+                </div>
             </div>
             <div class="row pt-2 m-1"><div class="col-8"><p>Lingua</p></div>
                 <div class="col"><p> {{lingua}} </p></div>

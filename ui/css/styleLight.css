@@ -13,11 +13,16 @@
 
 
   .btn{
-      background-color: whitesmoke;
+      background-color: transparent;
+      border-style:none;
       color: black;
   }
 
 img {
     max-width: 100%;
     height: auto;
+}
+
+.btn:hover{
+  background-color: gold;
 }
