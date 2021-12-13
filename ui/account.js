@@ -2,10 +2,6 @@ const account={template:`
 <div>
     <div class="header1 row d-flex justify-content-center">ACCOUNT</div>
 
-    <form>
-    <input type="text" id="name" onkeyup="myFunction()" placeholder="Cerca altri utenti...">
-    </form>
-    
     <center><h1><i>Ciao, {{nome}} {{cognome}}!</i></h1></center>
     <div class="row ">
         <div class="col"><div class="row text-center"><h2>Seguiti</h2></div><div class="row text-center"><h2>{{seguiti}}</h2></div></div>
@@ -18,6 +14,27 @@ const account={template:`
     <center><button type="button" class="btn btn-secondary btn-lg btn-block">Lista richieste follow</button></center>
     <br>
     <center><button type="button" class="btn btn-secondary btn-lg">Log out</button></center>
+    <br>
+    <center>
+    <form>
+        <div class="row"> 
+            <div class="col"><input type="text" id="name" v-model="cerca" v-on:keyup="cercautente()" placeholder="Cerca altri utenti..."> <i class="icofont-search-1 px-2"></i></div> 
+        </div>
+    </form>
+    </center>
+    <br>
+        <div class="row"> 
+        <table class="table">
+        <tbody>
+          <tr v-if= "cerca != '' " v-for="us in risultati">
+            <td>{{us.Nome}}</td>
+            <td>{{us.Cognome}}</td>
+            <td>{{us.User}}</td>
+          </tr>
+          </tbody>
+          </table>
+        </div>
+    
 </div>
 `,
 
@@ -28,7 +45,9 @@ const account={template:`
             cognome: "",
             nome: "",
             seguiti: 0,
-            follower: 0
+            follower: 0,
+            cerca:"",
+            risultati:[],
         }
     },
     methods: {
@@ -43,10 +62,20 @@ const account={template:`
                        
                 });
 
+        },
+
+        cercautente(){
+           
+          axios.get("http://localhost:8080/api/userbyus/"+this.cerca) 
+                .then((response) => {
+                            this.risultati = response.data.Users;
+                        
+                }); 
         }
 
-
     },
+
+ 
     mounted: function () {
         this.refreshData();
     }

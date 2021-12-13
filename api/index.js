@@ -92,15 +92,17 @@ app.listen(8080, () => {
 app.get('/api/userbyus/:user', (request, response) => {
     var data = fs.readFileSync('../assets/users.json', 'utf8');
     var myObject = JSON.parse(data);
-
+    var tmp =  JSON.parse(data);
+    tmp.Users.splice(0,tmp.Users.length)
 
    for (let [i, us] of myObject.Users.entries()) {
 
-    if (us.User == request.params.user) {
-        response.send(us);
+    if (us.User.includes(request.params.user) == true) {
+        tmp.Users.push(us);
+        
     }
 }
-
+    response.send(tmp);
    console.log("success");
 
 })
