@@ -24,7 +24,21 @@ const impostazioni = {
                 <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes" @click="colormode()"  v-if = "mode == false">
             </div>
             </div>
-            <div class="row pt-2 m-1"><select class="form-select" ><option v-for="cat in categoria">{{cat}}</option></select></div>
+            <div class="row pt-2 m-1">
+            <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Categorie Personalizzate
+            </button>
+            <ul class="dropdown-menu">
+                <li v-for="cat in categoria">
+                    <div class="row p-1">
+                        <div class="col-7"><a>{{cat}}</a></div>
+                        <div class="col"><a class="dropdown-item"><i class="icofont-trash"></i></a></div>
+                    </div>
+                </li>
+            </ul>
+            </div>
+            </div>
             <div class="row pt-2 m-1"><div class="col-8"><p>Lingua</p></div>
                 <div class="col"><p> {{lingua}} </p></div>
             </div>
@@ -33,6 +47,10 @@ const impostazioni = {
     </div>
    
 `,
+
+
+
+
 
     data() {
         return {
