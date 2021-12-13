@@ -11,9 +11,9 @@ function dark_mode(){
 
    
                    if (impostazione.Dark == "true") {
-                    document.getElementById("style").setAttribute('href', 'styleDark.css');
+                    document.getElementById("style").setAttribute('href', 'css/styleDark.css');
                    } else {
-                    document.getElementById("style").setAttribute('href', 'styleLight.css');
+                    document.getElementById("style").setAttribute('href', 'css/styleLight.css');
                    }
 
                });

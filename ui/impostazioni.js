@@ -10,7 +10,7 @@ const impostazioni = {
         </div>
 
         <div class="row pt-2 m-1">
-            <div class="col-8"><label class="form-check-label" for="mySwitch" id="lab_notifiche">{{notifica}}</label></div>
+            <div class="col-8"><label class="form-check-label" for="myNotifiche" id="lab_notifiche">{{notifica}}</label></div>
             <div class="col mx-2 form-switch">
                 <input class="form-check-input" type="checkbox" id="myNotifiche" name="notifiche" v-if = "noti == true" checked value="yes" @click="notifiche()" >
                 <input class="form-check-input" type="checkbox" id="myNotifiche" name="notifiche" v-if = "noti == false"  value="yes" @click="notifiche()" >
@@ -67,7 +67,6 @@ const impostazioni = {
                         }
                         this.lingua = impostazione.Lingua;
                         this.categoria = impostazione.Categoria;
-                        alert(this.categoria);
                     });
                 });
 
