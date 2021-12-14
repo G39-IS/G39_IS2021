@@ -7,7 +7,7 @@
             "User": "Marco_Pier",
             "Password":"pswd",
             "E-mail":"email@email.e",
-            "Seguiti" : 2,
+            "Seguiti" : [7,5,2],
             "Follower" : 1
         },
         {
@@ -17,7 +17,7 @@
             "User": "Marco Tutto",
             "Password":"pswd",
             "E-mail":"email@email.e",
-            "Seguiti" : 1,
+            "Seguiti" : [7,5,1],
             "Follower" : 10
         },
         {
@@ -27,7 +27,7 @@
             "User": "Macchigiuly",
             "Password":"pswd",
             "E-mail":"email@email.e",
-            "Seguiti" : 10,
+            "Seguiti" : [7,5,2],
             "Follower" : 1
         },
         {
@@ -37,7 +37,7 @@
             "User": "Sara Caligola",
             "Password":"pswd",
             "E-mail":"email@email.e",
-            "Seguiti" : 10,
+            "Seguiti" : [7,5,2],
             "Follower" : 1
         },
         {
@@ -47,7 +47,7 @@
             "User": "GiorgioFade",
             "Password":"pswd",
             "E-mail":"email@email.e",
-            "Seguiti" : 1,
+            "Seguiti" : [7,2],
             "Follower" : 10
         },
         {
@@ -57,7 +57,7 @@
             "User": "CastaGio",
             "Password":"pswd",
             "E-mail":"email@email.e",
-            "Seguiti" : 10,
+            "Seguiti" : [7,5,2],
             "Follower" : 1
         },
         {
@@ -67,7 +67,7 @@
             "User": "MCas",
             "Password":"pswd",
             "E-mail":"email@email.e",
-            "Seguiti" : 1,
+            "Seguiti" :[1,5,2],
             "Follower" : 10
         },
         {
@@ -77,7 +77,7 @@
             "User": "MartePietra",
             "Password":"pswd",
             "E-mail":"email@email.e",
-            "Seguiti" : 10,
+            "Seguiti" : [7,5,2],
             "Follower" : 1
         },
         {
@@ -87,7 +87,7 @@
             "User": "aigroiG",
             "Password":"pswd",
             "E-mail":"email@email.e",
-            "Seguiti" : 1,
+            "Seguiti" : [7,5,2],
             "Follower" : 10
         },
         {
@@ -97,7 +97,7 @@
             "User": "Marco_Pier",
             "Password":"pswd",
             "E-mail":"email@email.e",
-            "Seguiti" : 10,
+            "Seguiti" : [7,5,2],
             "Follower" : 1
         }
 
