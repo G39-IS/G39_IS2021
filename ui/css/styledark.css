@@ -1,19 +1,42 @@
-.header1{
-    background-color: #dcdcdc;
-    color: #191970;
-    font-family: Calibri;
-    font-size:30px;
-    font-weight: bold;
+  body{
+    background-color: #596675;
   }
+  
   .mode{
       background-color: #596675;
-      color: white;
-  }
-
-  .btn{
-      background-color: whitesmoke;
       color: black;
   }
+  .mode nav ul li .btn{
+      background-color: transparent;
+      color: black;
+      width: 100%;
+      text-align: left;
+  }
+  .mode nav ul li{
+    width: 100%;
+}
+
+.mode nav ul{
+    width: 100%;
+}
+.mode nav{
+    width: 100%;
+}
+  .mode a i {
+      color: black;
+  }
+
+  .active{
+      background-color: lightgray!important;
+  }
+.visible{
+    visibility: visible;
+    height: auto;
+}
+.hidden{
+    visibility: hidden;
+    height: 0;
+}
 
 img {
     max-width: 100%;

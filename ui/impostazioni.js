@@ -25,7 +25,7 @@ const impostazioni = {
             </div>
             </div>
             <div class="row pt-2 m-1">
-                <div class="col-8">
+                <div class="col-7">
                     <button class="btn p-0 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:transparent;">
                         Categorie Personalizzate
                     </button>
@@ -40,7 +40,7 @@ const impostazioni = {
                 </div>
                 <div class="col p-0">
                     <button type="button" style="border-style:none; background-color:transparent;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <i class="icofont-plus icofont-2x"></i>
+                    <i class="icofont-plus">Nuova categoria</i>
                     </button>
 
                     <!-- Modal -->
@@ -52,13 +52,13 @@ const impostazioni = {
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                <form>
-                                <div class="row">
-                                    <input type="text" class="form-control-plaintext" placeholder="Inserisci qui la categoria" required>
+                                    <form>
+                                    <div class="row">
+                                        <input type="text" class="form-control-plaintext" placeholder="Inserisci qui la categoria" required>
+                                    </div>
+                                    <div class="row"><button type="submit" class="btn btn-primary">Save changes</button></div>
+                                    </form>
                                 </div>
-                                 <div class="row"><button type="submit" class="btn btn-primary">Save changes</button></div>
-                                </form>
-                            </div>
                                 
                                    
                                 
@@ -123,12 +123,19 @@ const impostazioni = {
                         this.modalita = "Light Mode";
                     });
 
+                    let style = document.getElementById("style_mode");
+                    style.href = 'css/styleLight.css';
+                    document.head.appendChild(style);
+
             } else {
                 axios.post('http://localhost:8080/api/impostazione_dark/true')
                     .then((response) => {
                         //document.getElementById("style").setAttribute('href', 'styleDark.css');
                         this.modalita = "Dark Mode";
                     });
+                    let style = document.getElementById("style_mode");
+                    style.href = 'css/styleDark.css';
+                    document.head.appendChild(style);
             }
         },
 

@@ -1,5 +1,5 @@
 const account={template:`
-<div>
+<div >
     <div class="header1 row d-flex justify-content-center">ACCOUNT</div>
 
     <center><h1><i>Ciao, {{nome}} {{cognome}}!</i></h1></center>
@@ -23,16 +23,21 @@ const account={template:`
     </form>
     </center>
     <br>
-        <div class="row"> 
+        <div class="row mx-2">   
+        <div id="ac" class="hidden"></div>
         <table class="table">
         <tbody>
           <tr v-if= "cerca != '' " v-for="us in risultati">
-            <td>{{us.Nome}}</td>
-            <td>{{us.Cognome}}</td>
+            <td><p>{{us.Nome}} {{us.Cognome}}</p></td>
             <td>{{us.User}}</td>
+            <td>
+           
+            <a @click="showUser(us)"><i class="icofont-eye icofont-2x"></i></a></td>
+           
           </tr>
           </tbody>
-          </table>
+          </table> 
+        
         </div>
     
 </div>
@@ -71,7 +76,32 @@ const account={template:`
                             this.risultati = response.data.Users;
                         
                 }); 
+        },
+
+        showUser(us){
+            document.getElementById("ac").setAttribute("class", "visible;");
+           document.getElementById("ac").innerHTML =
+            '<div class="modal-dialog">'+
+                '<div class="modal-content">'+
+                    '<div class="modal-header">'+
+                        '<h5 class="modal-title" id="exampleModalLabel">Profilo</h5>'+
+                        '<button type="button" class="btn-close" onclick="closeUs()"></button>'+
+                    '</div>'+
+                    '<div class="modal-body">'+
+                    ' <center><h1><i>'+us.Nome+' '+us.Cognome+'</i></h1></center>'+
+                    '<div class="row ">'+
+                        '<div class="col"><div class="row text-center"><h2>Seguiti</h2></div><div class="row text-center"><h2>'+us.Seguiti+'</h2></div></div>'+
+                        '<div class="col"><div class="row text-center"><h2>Follower</h2></div><div class="row text-center"><h2>'+us.Follower+'</h2></div></div>'+
+                    '</div>'+
+                    '<center><h2>username: <b>'+us.User+'</b></h2></center>'+
+                    '<br>'+
+                    '<center><button type="button" class="btn btn-secondary btn-lg btn-block">Lista desideri</button></center>'+
+                    '<br>'+
+                    '</div></div>';
+
         }
+
+
 
     },
 

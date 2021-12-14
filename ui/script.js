@@ -11,9 +11,9 @@ function dark_mode(){
 
    
                    if (impostazione.Dark == "true") {
-                    document.getElementById("style").setAttribute('href', 'css/styleDark.css');
+                    document.getElementById("style_mode").setAttribute('href', 'css/styleDark.css');
                    } else {
-                    document.getElementById("style").setAttribute('href', 'css/styleLight.css');
+                    document.getElementById("style_mode").setAttribute('href', 'css/styleLight.css');
                    }
 
                });
@@ -34,4 +34,9 @@ function showMenu(){
 
 function closeMenu(){
     document.getElementById("mySidebar").style.display = "none";
+}
+
+function closeUs(){
+    document.getElementById("ac").setAttribute("class", "hidden");
+    document.getElementById("ac").innerHTML = "";
 }
