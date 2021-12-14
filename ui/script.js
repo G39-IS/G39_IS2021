@@ -27,3 +27,11 @@ function dark_mode(){
        request.send();
 }
 
+
+function showMenu(){
+        document.getElementById("mySidebar").style.display = "block";
+}
+
+function closeMenu(){
+    document.getElementById("mySidebar").style.display = "none";
+}

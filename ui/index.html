@@ -7,35 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styleDark.css" id="style">
     <link rel="stylesheet" href="css/icofont/icofont.min.css">
+    <link rel="stylesheet" href="css/w3.css">
 </head>
 <body>
 
     <div id="app">
-        <!--ho rimosso il dropdown menu, perché il router-links non erano visibili all'interno-->
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-           
-                <li class="nav-item my-1">
-                    <router-link class="btn btn-light btn-outline-dark btn-sm"  active-class="active"  to="/home"><i class="icofont-home icofont-2x"></i></router-link>
-                </li>
-                <li class="nav-item my-1">
-                    <router-link class="btn btn-light btn-outline-dark btn-sm"  active-class="active"  to="/calendario"><i class="icofont-calendar icofont-2x"></i></router-link>
-                </li>
-                <li class="nav-item my-1">
-                    <router-link class="btn btn-light btn-outline-dark btn-sm"  active-class="active"  to="/account"><i class="icofont-user icofont-2x"></i></router-link>
-                </li>
-                <li class="nav-item my-1">
-                    <router-link class="btn btn-light btn-outline-dark btn-sm"  active-class="active"  to="/ricerca"><i class="icofont-search-2 icofont-2x"></i></router-link>
-                </li>
-                <li class="nav-item my-1"> 
-                    <router-link class="btn btn-light btn-outline-dark btn-sm"  active-class="active"  to="/impostazioni"><i class="icofont-ui-settings icofont-2x"></i>
-                    </router-link>
-                </li>
-           
-        </nav>
-        <h1 class="d-flex justify-content-center"> TimeGift App </h1>
-        <h3 class="d-flex justify-content-center">Your friendly reminder</h3>
-        <hr>
-        <router-view></router-view>
+      
+          
+        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+            <a onclick="closeMenu()" ><i class="icofont-navigation-menu icofont-2x"></i></a>
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark "id="menu">
+            <ul class="list-group">
+                    <li class="nav-item my-1">
+                        <router-link class="btn btn-light btn-outline-dark btn-sm"  active-class="active"  to="/home"><i class="icofont-home icofont-2x"></i></router-link>Home
+                    </li>
+                    <li class="nav-item my-1">
+                        <router-link class="btn btn-light btn-outline-dark btn-sm"  active-class="active"  to="/calendario"><i class="icofont-calendar icofont-2x"></i></router-link>Calendar
+                    </li>
+                    <li class="nav-item my-1">
+                        <router-link class="btn btn-light btn-outline-dark btn-sm"  active-class="active"  to="/account"><i class="icofont-user icofont-2x"></i></router-link>Account
+                    </li>
+                    <li class="nav-item my-1">
+                        <router-link class="btn btn-light btn-outline-dark btn-sm"  active-class="active"  to="/ricerca"><i class="icofont-search-2 icofont-2x"></i></router-link>Regali
+                    </li>
+                    <li class="nav-item my-1"> 
+                        <router-link class="btn btn-light btn-outline-dark btn-sm"  active-class="active"  to="/impostazioni"><i class="icofont-ui-settings icofont-2x"></i></router-link>Impostazioni
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div >
+            <a onclick="showMenu()" ><i class="icofont-navigation-menu icofont-2x"></i></a>        
+            <h1 class="d-flex justify-content-center"> TimeGift App </h1>
+            <h3 class="d-flex justify-content-center">Your friendly reminder</h3>
+            <hr>
+            <router-view></router-view>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
