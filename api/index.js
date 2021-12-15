@@ -8,7 +8,7 @@ const swaggerOptions = {
     swaggerDefinition: {
         openapi: '3.0.0',
         info: {
-            title: 'Express API for My Project',
+            title: 'Time Gitf Application',
             version: '1.0.0',
             description:
                 'This is a REST API application made with Express.',
@@ -17,8 +17,7 @@ const swaggerOptions = {
                 url: 'https://spdx.org/licenses/MIT.html',
             },
             contact: {
-                name: 'Group39',
-                url: 'http://localhost:8080/',
+                name: 'Group39'
             },
         },
         servers: [
@@ -61,11 +60,18 @@ app.listen(8080, () => {
  * @swagger
  * /api/userbyus/{user}:
  *   get:
- *     summary: Retrieve a signle User.
- *     description: etrieve a signle User from the Server.
+ *     summary: Restituisce degli utenti.
+ *     description: Restituisce degli utenti che contengono una certa stringa nel campo User.
+ *     parameters:
+ *       - in: path
+ *         name: user
+ *         schema:
+ *             type: string
+ *         required: true
+ *         description: stringa da cercare nel campo User degli utenti
  *     responses:
  *       200:
- *         description: A User informations.
+ *         description: Informazioni utente.
  *         content:
  *           application/json:
  *             schema:
@@ -78,17 +84,36 @@ app.listen(8080, () => {
  *                     properties:
  *                       Nome:
  *                         type: string
- *                         description: The User Name.
+ *                         description: Nome dell'utente.
  *                         example: Giovanna
  *                       Cognome:
  *                         type: string
- *                         description: The User Surname.
+ *                         description: Cognome dell'utente.
  *                         example: Barotti
  *                       User:
  *                          type: string
- *                          description: The User username
+ *                          description: Username dell'utente
+ *                          example: calligalli
+ *                       Password:
+ *                          type: string
+ *                          description: Password dell'utente
+ *                          example: calligalli
+ *                       E-mail:
+ *                          type: string
+ *                          description: email dell'utente
+ *                          example: calligalli
+ *                       Seguiti:
+ *                          type: array
+ *                          description: lista id degli account seguiti dall'utente
+ *                          example: [1,2,3,4]
+ *                       Follower:
+ *                          type: int
+ *                          description: Numero follower dell'utente
  *                          example: calligalli
  */
+
+
+
 app.get('/api/userbyus/:user', (request, response) => {
     var data = fs.readFileSync('../assets/users.json', 'utf8');
     var myObject = JSON.parse(data);
@@ -109,13 +134,20 @@ app.get('/api/userbyus/:user', (request, response) => {
 
 /**
  * @swagger
- * /api/userbyid/{id}:
+ * /api/userbyus/{id}:
  *   get:
- *     summary: Retrieve a signle User.
- *     description: etrieve a signle User from the Server.
+ *     summary: Restituisce degli utenti.
+ *     description: Restituisce degli utenti con un ID che combacia con il paramentro passato.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *             type: string
+ *         required: true
+ *         description: id utente cercato
  *     responses:
  *       200:
- *         description: A User informations.
+ *         description: Informazioni utente.
  *         content:
  *           application/json:
  *             schema:
@@ -128,17 +160,34 @@ app.get('/api/userbyus/:user', (request, response) => {
  *                     properties:
  *                       Nome:
  *                         type: string
- *                         description: The User Name.
+ *                         description: Nome dell'utente.
  *                         example: Giovanna
  *                       Cognome:
  *                         type: string
- *                         description: The User Surname.
+ *                         description: Cognome dell'utente.
  *                         example: Barotti
  *                       User:
  *                          type: string
- *                          description: The User username
+ *                          description: Username dell'utente
  *                          example: calligalli
- */        
+ *                       Password:
+ *                          type: string
+ *                          description: Password dell'utente
+ *                          example: calligalli
+ *                       E-mail:
+ *                          type: string
+ *                          description: email dell'utente
+ *                          example: calligalli
+ *                       Seguiti:
+ *                          type: array
+ *                          description: lista id degli account seguiti dall'utente
+ *                          example: [1,2,3,4]
+ *                       Follower:
+ *                          type: int
+ *                          description: Numero follower dell'utente
+ *                          example: calligalli
+ */
+ 
  app.get('/api/userbyid/:id', (request, response) => {
     var data = fs.readFileSync('../assets/users.json', 'utf8');
     var myObject = JSON.parse(data);
@@ -161,11 +210,11 @@ app.get('/api/userbyus/:user', (request, response) => {
  * @swagger
  * /api/user:
  *   get:
- *     summary: Retrieve a list of users.
- *     description: Retrieve a list of users from the Server.
+ *     summary: Restituisce tutti utenti.
+ *     description: Restituisce tutti utenti.
  *     responses:
  *       200:
- *         description: A list of users.
+ *         description: Informazioni utente.
  *         content:
  *           application/json:
  *             schema:
@@ -176,19 +225,36 @@ app.get('/api/userbyus/:user', (request, response) => {
  *                   items:
  *                     type: object
  *                     properties:
- *                        Nome:
+ *                       Nome:
  *                         type: string
- *                         description: The User Name.
+ *                         description: Nome dell'utente.
  *                         example: Giovanna
  *                       Cognome:
  *                         type: string
- *                         description: The User Surname.
+ *                         description: Cognome dell'utente.
  *                         example: Barotti
  *                       User:
  *                          type: string
- *                          description: The User username
+ *                          description: Username dell'utente
+ *                          example: calligalli
+ *                       Password:
+ *                          type: string
+ *                          description: Password dell'utente
+ *                          example: calligalli
+ *                       E-mail:
+ *                          type: string
+ *                          description: email dell'utente
+ *                          example: calligalli
+ *                       Seguiti:
+ *                          type: array
+ *                          description: lista id degli account seguiti dall'utente
+ *                          example: [1,2,3,4]
+ *                       Follower:
+ *                          type: int
+ *                          description: Numero follower dell'utente
  *                          example: calligalli
  */
+ 
  app.get('/api/user', (request, response) => {
     var data = fs.readFileSync('../assets/users.json');
     var myObject = JSON.parse(data);
@@ -202,8 +268,8 @@ app.get('/api/userbyus/:user', (request, response) => {
  * @swagger
  * /api/impostazioni:
  *   get:
- *     summary: Retrieve the list of impostations.
- *     description: Retrieve the list of impostations.
+ *     summary: Restituisce la lista delle impostazioni.
+ *     description: Restituisce la lista delle impostazioni.
  *     responses:
  *       200:
  *         description: A list of impostations.
@@ -217,23 +283,25 @@ app.get('/api/userbyus/:user', (request, response) => {
  *                   items:
  *                     type: object
  *                     properties:
- *                        Nome:
+ *                       Dark:
  *                         type: string
  *                         description: Darkmode.
  *                         example: true
- *                       Cognome:
+ *                       Notifiche:
  *                         type: string
- *                         description: impostazioni.
+ *                         description: Notifiche.
  *                         example: false
- *                       User:
+ *                       Lingua:
  *                          type: string
  *                          description: Lingua
  *                          example: Italiano
- *                       User:
+ *                       Categoria:
  *                          type: array
  *                          items: string
- *                          example: calligalli
- */
+ *                          example: ["ds","fd","cf"]
+*/
+
+
  app.get('/api/impostazioni', (request, response) => {
     var data = fs.readFileSync('../assets/impostazioni.json');
     var myObject = JSON.parse(data);
@@ -245,21 +313,21 @@ app.get('/api/userbyus/:user', (request, response) => {
 
 /**
  * @swagger
- * /api/impostazoine_dark/{value}:
+ * /api/impostazione_dark/{value}:
  *   put:
- *     summary: Update dark mode.
+ *     summary: Modifica visualizzazione applicazione
  *     parameters:
  *       - in: path
- *         name: alue
+ *         name: value
  *         schema:
  *             type: string
  *         required: true
- *         description: the product value
+ *         description: true -> dark , fasle -> Light
  *     responses:
  *       200:
- *         description: the product was update
+ *         description: the impostation was update
  *       404:
- *         description: the product was not found
+ *         description: the impostation was not update
 */
 app.put('/api/impostazione_dark/:value', (request, response) => {
     var data = fs.readFileSync('../assets/impostazioni.json');
@@ -279,21 +347,21 @@ app.put('/api/impostazione_dark/:value', (request, response) => {
 
 /**
  * @swagger
- * /api/impostazoine_notifica/{value}:
+ * /api/impostazione_notifica/{value}:
  *   put:
- *     summary: Update dark mode.
+ *     summary: Modifica impostazione notifiche
  *     parameters:
  *       - in: path
- *         name: alue
+ *         name: value
  *         schema:
  *             type: string
  *         required: true
- *         description: the product value
+ *         description: true -> yes , fasle -> no
  *     responses:
  *       200:
- *         description: the product was update
+ *         description: the impostation was update
  *       404:
- *         description: the product was not found
+ *         description: the impostation was not update
 */
 app.put('/api/impostazione_notifica/:value', (request, response) => {
     var data = fs.readFileSync('../assets/impostazioni.json');
