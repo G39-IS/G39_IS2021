@@ -4,11 +4,11 @@
   
   .mode{
       background-color: #596675;
-      color: black;
+      color: whitesmoke;
   }
   .mode nav ul li .btn{
       background-color: transparent;
-      color: black;
+      color: whitesmoke;
       width: 100%;
       text-align: left;
   }

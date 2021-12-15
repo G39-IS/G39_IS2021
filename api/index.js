@@ -246,7 +246,7 @@ app.get('/api/userbyus/:user', (request, response) => {
 /**
  * @swagger
  * /api/impostazoine_dark/{value}:
- *   post:
+ *   put:
  *     summary: Update dark mode.
  *     parameters:
  *       - in: path
@@ -261,7 +261,7 @@ app.get('/api/userbyus/:user', (request, response) => {
  *       404:
  *         description: the product was not found
 */
-app.post('/api/impostazione_dark/:value', (request, response) => {
+app.put('/api/impostazione_dark/:value', (request, response) => {
     var data = fs.readFileSync('../assets/impostazioni.json');
     var myObject = JSON.parse(data);
   
@@ -280,7 +280,7 @@ app.post('/api/impostazione_dark/:value', (request, response) => {
 /**
  * @swagger
  * /api/impostazoine_notifica/{value}:
- *   post:
+ *   put:
  *     summary: Update dark mode.
  *     parameters:
  *       - in: path
@@ -295,7 +295,7 @@ app.post('/api/impostazione_dark/:value', (request, response) => {
  *       404:
  *         description: the product was not found
 */
-app.post('/api/impostazione_notifica/:value', (request, response) => {
+app.put('/api/impostazione_notifica/:value', (request, response) => {
     var data = fs.readFileSync('../assets/impostazioni.json');
     var myObject = JSON.parse(data);
   

@@ -117,7 +117,7 @@ const impostazioni = {
         colormode() {
             if (document.getElementById("mySwitch").checked == false) {
 
-                axios.post('http://localhost:8080/api/impostazione_dark/false')
+                axios.put('http://localhost:8080/api/impostazione_dark/false')
                     .then((response) => {
                         //document.getElementById("style").setAttribute('href', 'styleLight.css');
                         this.modalita = "Light Mode";
@@ -128,7 +128,7 @@ const impostazioni = {
                     document.head.appendChild(style);
 
             } else {
-                axios.post('http://localhost:8080/api/impostazione_dark/true')
+                axios.put('http://localhost:8080/api/impostazione_dark/true')
                     .then((response) => {
                         //document.getElementById("style").setAttribute('href', 'styleDark.css');
                         this.modalita = "Dark Mode";
@@ -141,12 +141,12 @@ const impostazioni = {
 
         notifiche() {
             if (document.getElementById("myNotifiche").checked == true) {
-                axios.post('http://localhost:8080/api/impostazione_notifica/true')
+                axios.put('http://localhost:8080/api/impostazione_notifica/true')
                     .then((response) => {
                         this.notifica = "Notifiche On";
                     });
             } else {
-                axios.post('http://localhost:8080/api/impostazione_notifica/false')
+                axios.put('http://localhost:8080/api/impostazione_notifica/false')
                 .then((response) => {
                     this.notifica = "Notifiche Off";
                 });
