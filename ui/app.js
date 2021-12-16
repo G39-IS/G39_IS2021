@@ -1,5 +1,5 @@
 const routes=[
-    {path:'/home',component:home},
+    {path:'/',component:home},
     {path:'/calendario',component:calendario},
     {path:'/account',component:account},
     {path:'/ricerca',component:ricerca},
