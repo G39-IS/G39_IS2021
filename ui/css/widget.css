@@ -1,7 +1,4 @@
 <!--free widget code from https://www.bootdey.com/snippets/view/reminder-widget#html-->
-.center {
-    margin: auto;
-}
 
 .widget {
     background: #fff;
@@ -55,6 +52,7 @@ a.widget-header-title {
     float: left;
     text-align: right;
     font-size: 0.625rem;
+    color: #8a8a8f;
 }
 .widget-reminder-divider {
     position: absolute;
