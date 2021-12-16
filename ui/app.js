@@ -1,5 +1,6 @@
 const routes=[
     {path:'/',component:home},
+    {path:'/home',component:home},
     {path:'/calendario',component:calendario},
     {path:'/account',component:account},
     {path:'/ricerca',component:ricerca},
