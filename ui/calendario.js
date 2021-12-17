@@ -49,7 +49,7 @@ il click al "Cancella" cancella evento -->
     </div>
     <div class="modal-body">
    	 <p>Data:</p> {{Data}}
-   	 <p>Livello di priorita':</p> {{LivelloDiPriorita}}
+   	 <p>Priorita':</p> {{LivelloDiPriorita}}
     	 <p>Categoria:</p> {{Categoria}}
     	 <p>Descrizione:</p> {{Descrizione}}
     <div class="modal-footer">
@@ -75,12 +75,12 @@ il click al "Cancella" cancella evento -->
             </div>
 
             <div class="input-group mb-3">
-            <span class="input-group-text">Livello di priorita'</span>
-		<select v-model="Priorità">
+            <span class="input-group-text">Priorita'</span>
+		<select v-model="Priorita'">
  	        <option disabled value="">Seleziona</option>
- 	        <option>Priorità alta</option>
-  		    <option>Priorità media</option>
-  		    <option>Priorità alta</option>
+ 	            <option>alta</option>
+  		    <option>media</option>
+  		    <option>bassa</option>
 		</select>
             </div>
 
