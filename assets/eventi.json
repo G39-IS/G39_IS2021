@@ -1,9 +1,9 @@
 {
-    "Eventi": [
+    "eventi": [
         {
             "Data": "10/01/2022",
             "Titolo": "Esame di Ingegneria del Software",
-            "Priorità": "alta",
+            "LivelloDiPriorita": "alta",
             "Categoria": "Impegno scolastico",
             "Descrizione": "Presentazione del progetto",
             "Fascia oraria": "Tutto il giorno",
@@ -18,9 +18,9 @@
         },
         
         {
-            "Data": "08/02/2022",
+            "Data": "18/01/2022",
             "Titolo": "Compleanno di Piergiorgio",
-            "Priorità": "bassa",
+            "LivelloDiPriorita": "bassa",
             "Categoria": "Compleanno",
             "Descrizione": "Festa al Bar Sport",
             "Fascia oraria": "19:00-21:00",
