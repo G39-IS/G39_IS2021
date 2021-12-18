@@ -379,3 +379,90 @@ app.put('/api/impostazione_notifica/:value', (request, response) => {
     response.json("Update Successfully: " + myObject.Impostazioni.length);
 })
 
+
+
+/**
+ * @swagger
+ * /api/eventi:
+ *   get:
+ *     summary: Restituisce tutti gli eventi.
+ *     description: Restituisce tutti gli eventi.
+ *     responses:
+ *       200:
+ *         description: Informazioni eventi.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       Data:
+ *                         type: string
+ *                         description: Data evento.
+ *                         example: 10/01/2022
+ *                       Titolo:
+ *                         type: string
+ *                         description: Titolo evento.
+ *                         example: Esame di Ingegneria del Software
+ *                       LivelloDiPriorita:
+ *                          type: string
+ *                          description: Priorità dell'evento
+ *                          example: alta
+ *                       Categoria:
+ *                          type: string
+ *                          description: Categoria dell'evento
+ *                          example: Impegno scolastico
+ *                       Descrizione:
+ *                          type: string
+ *                          description: Descrizione dell'evento
+ *                          example: Presentazione del progetto
+ *                       Fasciaoraria:
+ *                          type: string
+ *                          description: Descrizione dell'evento
+ *                          example: Presentazione del progetto
+ *                       Frequenza:
+ *                          type: string
+ *                          description: Descrizione dell'evento
+ *                          example: Presentazione del progetto
+ *                       Frequenzanotifica:
+ *                          type: string
+ *                          description: Descrizione dell'evento
+ *                          example: Presentazione del progetto
+ *                       Listaamici:
+ *                          type: array
+ *                          description: lista id degli account seguiti dall'utente
+ *                          example: [1,2,3,4]
+ *                       Messaggioautomatico:
+ *                          type: bool
+ *                          description: Impostazione invio automatico dei messaggi
+ *                          example: true
+ *                       Numerotelefono:
+ *                          type: string
+ *                          description: Nuemero telefono a cui inviare sms
+ *                          example: 3837642340
+ *                       Testo:
+ *                          type: string
+ *                          description: Testo del messaggio
+ *                          example: Testo del messaggio
+ *                       Orario:
+ *                          type: string
+ *                          description: Orario invio messaggio dell'evento
+ *                          example: null
+ *                       Fusi-orari:
+ *                          type: string
+ *                          description: Fuso orario notifica dell'evento
+ *                          example: disattivato
+ */
+ 
+ app.get('/api/eventi', (request, response) => {
+    var data = fs.readFileSync('../assets/eventi.json');
+    var myObject = JSON.parse(data);
+
+    response.send(myObject);
+
+})
+
