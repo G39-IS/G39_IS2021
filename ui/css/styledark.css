@@ -36,10 +36,49 @@
 .hidden{
     visibility: hidden;
     height: 0;
-}
+    width: 0;
+    border-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  
 
 img {
     max-width: 100%;
     height: auto;
 }
 
+
+
+.visualizza div div input, .visualizza div div select, .visualizza div div textarea{
+
+    border-style: none;
+    border-color: unset;
+    
+  
+  }
+
+  .title,title:disabled{
+
+  font-weight: bold;
+  font-style: 20px;
+  opacity: 1;
+  color: black;
+  appearance: none;
+  background-color: transparent;
+  border-style: none;
+  border-color: unset;  
+  
+  }
+  
+  .visualizza div div input:disabled, .visualizza div div select:disabled, .visualizza div div textarea:disabled, .form-control:disabled{
+  
+    opacity: 1;
+    color: black;
+    appearance: none;
+    background-color: transparent;
+    border-style: none;
+    border-color: unset;
+   
+  }

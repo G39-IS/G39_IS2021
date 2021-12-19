@@ -44,19 +44,56 @@ const calendario={template:`
         <div class="modal-dialog modal-md modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">{{Titolo}}</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="col-7">  <input type="text" class="title" id="tit" placeholder="Inserisci titolo" name="ntit" v-model="Titolo" disabled required></div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="closemodificaClick()"></button>
                 </div>
-                <div class="modal-body">
-                    <p><b>Data: </b> {{Data}}</p>
-                    <p><b>Priorita': </b>{{LivelloDiPriorita}}</p>
-                    <p><b>Categoria: </b>{{Categoria}}</p>
-                    <p><b>Descrizione: </b>{{Descrizione}}</p>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" @click="editClick()">Modifica evento</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal"
-                            @click="deleteClick()">Cancella evento</button>
+                <div class="modal-body visualizza" id ="modal_body">
+                <form>
+                    <div class="row">
+                        <div class="col"> Data: </div>
+                        <div class="col-7">  <input type="text" class="form-control" id="data" placeholder="Inserisci data" name="ndata" v-model="Data" disabled required></div>
                     </div>
+
+                    <div class="mb-3 mt-3 row">
+                        <div class="col">  LivelloDiPriorita':</div>
+                        <div class="col-7">    
+                            <select v-model="LivelloDiPriorita" id="livp" disabled required>
+                                <option disabled value="" selected>Seleziona</option>
+                                <option value="alta">alta</option>
+                                <option value="media">media</option>
+                                <option value="bassa">bassa</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 mt-3 row">
+                        <div class="col">  Categoria:</div>
+                        <div class="col-7">    
+                            <select v-model="Categoria" id="cat" disabled required>
+                                <option disabled value="" selected>Seleziona</option>
+                                <option>Cose da fare</option>
+                                <option>Compleanno</option>
+                                <option>Evento di lavoro</option>
+                                <option>Divertimento</option>
+                                <option>Impegno scolastico</option>
+                                <option>Socialità</option>
+                                <option>Categoria personalizzata</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 mt-3">
+                         Descrizione:
+                             
+                            <textarea disabled  class="form-control" id="desc" placeholder="Inserisci descrizione" name="ndesc" v-model="Descrizione" required></textarea>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="vismod" class="btn btn-warning visible" @click="editClick()">Modifica evento</button>
+                        <button type="submit" id="modbut" class="btn btn-warning hidden" @click="editconfirmClick()">Conferma modifica</button>
+                        <button type="button" id="delete" class="btn btn-danger visible" data-dismiss="modal" @click="deleteClick()">Cancella evento</button>
+                    </div>
+                    </form>
                     <div>
                     </div>
                 </div>
@@ -64,21 +101,22 @@ const calendario={template:`
         </div>
     </div>
             <div class="hidden" id="add_ev">
-            <button type="button" class="btn-close " @click="close()"></button>
+                <button type="button" class="btn-close " @click="close()"></button>
+                <form>
                 <div class="input-group mb-3">
                     <span class="input-group-text">Titolo</span>
-                    <input type="text" class="form-control" v-model="Titolo">
+                    <input type="text" class="form-control" v-model="Titolo" required>
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text">Data</span>
-                    <input type="date" class="form-control" v-model="Data">
+                    <input type="date" class="form-control" v-model="Data" required>
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text">Priorita'</span>
-                    <select v-model="LivelloDiPriorita">
-                        <option disabled value="">Seleziona</option>
+                    <select v-model="LivelloDiPriorita" required>
+                        <option disabled value="" selected>Seleziona</option>
                         <option>alta</option>
                         <option>media</option>
                         <option>bassa</option>
@@ -87,8 +125,8 @@ const calendario={template:`
 
                 <div class="input-group mb-3">
                     <span class="input-group-text">Categoria</span>
-                    <select v-model="Categoria">
-                        <option disabled value="">Seleziona</option>
+                    <select v-model="Categoria" required>
+                        <option disabled value="" selected>Seleziona</option>
                         <option>Cose da fare</option>
                         <option>Compleanno</option>
                         <option>Evento di lavoro</option>
@@ -102,10 +140,11 @@ const calendario={template:`
 
                 <div class="input-group mb-3">
                     <span class="input-group-text">Descrizione</span>
-                    <textarea v-model="Descrizione" placeholder="Aggiungi la tua descrizione"></textarea>
+                    <textarea v-model="Descrizione" placeholder="Aggiungi la tua descrizione" required></textarea>
                 </div>
-                <center><button type="button" class="btn btn-secondary" @click="createClick()">Salva i
+                <center><button type="submit" class="btn btn-secondary" @click="createClick()">Salva i
                         dettagli!</button></center>
+                        </form>
             </div>
     
 </div>`,
@@ -113,49 +152,94 @@ const calendario={template:`
     data() {
         return {
             eventi: [],
-            Titolo: "",
             Data: "",
+            Titolo: "",
             LivelloDiPriorita: "",
             Categoria: "",
-            Descrizione: ""
+            Descrizione: "",
+            ID:-1
         }
     },
     methods: {
         refreshData() {
             axios.get('http://localhost:8080/api/eventi')
                 .then((response) => {
-                    this.eventi = response.data.Eventi;
+                    this.eventi = response.data;
                 });
         },
         addClick() {
             document.getElementById("add_ev").setAttribute("class","visible");
             document.getElementById("tabella").setAttribute("class","hidden");
-            this.modalTitle = "Aggiungi evento";
-            this.EmployeeId = 0;
-            this.EmployeeName = "";
-            this.Department = "",
-            this.DateOfJoining = ""
+            this.Titolo = "";
+            this.Data = "";
+            this.LivelloDiPriorita = "";
+            this.Categoria = "";
+            this.Descrizione = "";
+            this.ID = "";
         },
-        editClick(evn) {
-            this.Titolo = evn.Titolo;
-            this.Data = evn.Data;
-            this.LivelloDiPriorita = evn.LivelloDiPriorita,
-            this.Categoria = evn.Categoria,
-            this.Descrizione = evn.Descrizione
+        editconfirmClick(){
+            if (confirm("Sei sicuro di voler modificare?")) {
+            axios.put('http://localhost:8080/api/eventi/'+this.ID,({
+                "Descrizione": this.Descrizione,
+                "Titolo": this.Titolo,
+                "Data": this.Data,
+                "LivelloDiPriorita" : this.LivelloDiPriorita,
+                "Categoria" : this.Categoria
+            }))
+            .then((response) => {
+                this.eventi = response.data.Eventi;
+                this.refreshData();
+            });
+            this.closemodificaClick();
+        }
+        },
+        closemodificaClick(){
+            document.getElementById("modal_body").classList.add("visualizza");
+            document.getElementById('data').disabled = true;
+            document.getElementById('livp').disabled = true;
+            document.getElementById('cat').disabled = true;
+            document.getElementById('desc').disabled = true;
+            document.getElementById('tit').disabled = true;
+            document.getElementById("vismod").classList.add("visible");
+            document.getElementById("modbut").classList.add("hidden");
+            document.getElementById("delete").classList.add("visible");
+
+            document.getElementById("vismod").classList.remove("hidden");
+            document.getElementById("modbut").classList.remove("visible");
+            document.getElementById("delete").classList.remove("hidden");
+
+             
+        },
+        editClick() {
+            document.getElementById("modal_body").classList.remove("visualizza");
+            document.getElementById('data').disabled = false;
+            document.getElementById('livp').disabled = false;
+            document.getElementById('cat').disabled = false;
+            document.getElementById('desc').disabled = false;
+            document.getElementById('tit').disabled = false;
+
+            document.getElementById("vismod").classList.add("hidden");
+            document.getElementById("modbut").classList.add("visible");
+            document.getElementById("delete").classList.add("hidden");
+
+            document.getElementById("vismod").classList.remove("visible");
+            document.getElementById("modbut").classList.remove("hidden");
+            document.getElementById("delete").classList.remove("visible");
         },
         showClick(evn){
             this.Titolo = evn.Titolo;
             this.Data = evn.Data;
-            this.LivelloDiPriorita = evn.LivelloDiPriorita,
-            this.Categoria = evn.Categoria,
-            this.Descrizione = evn.Descrizione
+            this.LivelloDiPriorita = evn.LivelloDiPriorita;
+            this.Categoria = evn.Categoria;
+            this.Descrizione = evn.Descrizione;
+            this.ID = evn.ID;
         },
         close(){
             document.getElementById("add_ev").setAttribute("class","hidden");
             document.getElementById("tabella").setAttribute("class","visible");
         },
         createClick() {
-            axios.post(variables.API_URL + "evento", {
+            axios.post('http://localhost:8080/api/eventi', {
                 Titolo: this.Titolo,
                 Data: this.Data,
                 Categoria: this.Categoria,
@@ -167,29 +251,14 @@ const calendario={template:`
                     alert(response.data);
                 });
         },
-        updateClick() {
-            axios.put(variables.API_URL + "evento", {
-                Titolo: this.Titolo,
-                Data: this.Data,
-                Categoria: this.Categoria,
-                LivelloDiPriorita: this.LivelloDiPriorita,
-                Descrizione: this.Descrizione
-            })
+        deleteClick() {
+            if (confirm("Sei sicuro di voler cancellarlo?")) {
+                axios.delete('http://localhost:8080/api/eventi/'+this.ID)
                 .then((response) => {
                     this.refreshData();
                     alert(response.data);
-                });
-        },
-        deleteClick(id) {
-            if (!confirm("Sei sicuro di voler cancellarlo?")) {
-                return;
+                }); 
             }
-            axios.delete(variables.API_URL + "evento/" + Titolo)
-                .then((response) => {
-                    this.refreshData();
-                    alert(response.data);
-                });
-
         },
 
     },

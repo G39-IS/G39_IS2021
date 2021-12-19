@@ -462,7 +462,152 @@ app.put('/api/impostazione_notifica/:value', (request, response) => {
     var data = fs.readFileSync('../assets/eventi.json');
     var myObject = JSON.parse(data);
 
-    response.send(myObject);
+    response.send(myObject.ev.Eventi);
 
 })
 
+
+/**
+ * @swagger
+ * /api/eventi/{id}:
+ *   delete:
+ *     summary: Delete a event.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *             type: int
+ *         required: true
+ *         description: the event id
+ *     responses:
+ *       200:
+ *         description: the event was deleted
+ *       404:
+ *         description: the event was not found
+*/
+app.delete('/api/eventi/:id', (request, response) => {
+    var data = fs.readFileSync('../assets/eventi.json');
+    var myObject = JSON.parse(data);
+    for (let [i, ev] of myObject.ev.Eventi.entries()) {
+
+        if (ev.ID == request.params.id) {
+            myObject.ev.Eventi.splice(i, 1);
+        }
+    }
+    //memorizzo il nuovo JSON dopo la cancellazione
+    var newData = JSON.stringify(myObject);
+    fs.writeFile('../assets/eventi.json', newData, err => {
+        // error checking
+        if (err) throw err;
+    });
+    response.json("Deleted Successfully: " + myObject.ev.Eventi.length);
+})
+
+
+/**
+ * @swagger
+ * /api/eventi/{id}:
+ *   put:
+ *     summary: Modifica evento corrispondente all'id passato come parametro
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *             type: int
+ *         required: true
+ *         description: id dell'evento da modificare
+ *     responses:
+ *       200:
+ *         description: evento was update
+ *       404:
+ *         description: evento was not update
+*/
+app.put('/api/eventi/:id', (request, response) => {
+    var data = fs.readFileSync('../assets/eventi.json');
+    var myObject = JSON.parse(data);
+
+    for (let [i, evn] of myObject.ev.Eventi.entries()) {
+        if (evn.ID == request.params.id) {
+            myObject.ev.Eventi[i].Descrizione=request.body['Descrizione'];
+            myObject.ev.Eventi[i].Data=request.body['Data'];
+            myObject.ev.Eventi[i].Titolo=request.body['Titolo'];
+            myObject.ev.Eventi[i].LivelloDiPriorita=request.body['LivelloDiPriorita'];
+            myObject.ev.Eventi[i].Categoria=request.body['Categoria'];
+        }
+    }
+
+    //memorizzo il nuovo JSON dopo la cancellazione
+    var newData = JSON.stringify(myObject);
+    fs.writeFile('../assets/eventi.json', newData, err => {
+        // error checking
+        if (err) throw err;
+    });
+    response.json("Update Successfully: " + myObject.ev.Eventi.length);
+})
+
+/**
+ * @swagger
+ * /api/eventi:
+ *   post:
+ *     summary: Crea un evento.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               Name:
+ *                  type: integer
+ *                  description: The product Name.
+ *                  example: Antonio
+ *               Price:
+ *                  type: string
+ *                  description: The product's price.
+ *                  example: 20.0
+ *               Location:
+ *                  type: string
+ *                  description: The product's location
+ *                  example: Refrigerated foods
+ *     responses:
+ *       201:
+ *         description: successful executed
+*/
+app.post('/api/eventi', (request, response) => {
+
+    // lettura file json e estrazione dati
+    var data = fs.readFileSync('../assets/eventi.json');
+    var myObject = JSON.parse(data);
+
+
+    // creazione nuovo elemento da inserire da Request Parameter
+    let newevn = {
+        "ID": myObject.ev.LastId+1,
+        "Data": request.body['Data'],
+        "Titolo": request.body['Titolo'],
+        "LivelloDiPriorita": request.body['LivelloDiPriorita'],
+        "Categoria": request.body['Categoria'],
+        "Descrizione": request.body['Descrizione'],
+        "Fasciaoraria": "Tutto il giorno",
+        "Frequenza": "una volta",
+        "Frequenzanotifica": "Mai",
+        "Listaamici": [ 1,3,4,5],
+        "Messaggioautomatico": true,
+        "Numerotelefono": null,
+        "Testo": null,
+        "Orario": null,
+        "Fusi-orari": "disattivato"
+    };
+
+    //aggiunta nuovo elemento
+    myObject.ev.Eventi.push(newevn);
+
+    //aggiornamento file json con il nuovo elemento
+    var newData = JSON.stringify(myObject);
+    fs.writeFile('../assets/eventi.json', newData, err => {
+        // error checking
+        if (err) throw err;
+    });
+
+    response.json("Prodotto Aggiunto Correttamente: (" + myObject.ev.Eventi.length + ")");
+})

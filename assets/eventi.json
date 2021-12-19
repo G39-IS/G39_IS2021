@@ -1,38 +1,46 @@
-{
-    "Eventi": [
-        {
-            "Data": "10/01/2022",
-            "Titolo": "Esame di Ingegneria del Software",
-            "LivelloDiPriorita": "alta",
-            "Categoria": "Impegno scolastico",
-            "Descrizione": "Presentazione del progetto",
-            "Fasciaoraria": "Tutto il giorno",
-            "Frequenza": "una volta",
-            "Frequenza notifica": "Mai",
-            "Listaamici": [1,3,4,5],
-            "Messaggioautomatico": true,
-            "Numerotelefono": null,
-            "Testo": null,
-            "Orario": null,
-            "Fusi-orari": "disattivato"
-        },
-        
-        {
-            "Data": "18/01/2022",
-            "Titolo": "Compleanno di Piergiorgio",
-            "LivelloDiPriorita": "bassa",
-            "Categoria": "Compleanno",
-            "Descrizione": "Festa al Bar Sport",
-            "Fasciaoraria": "19:00-21:00",
-            "Frequenza": "una volta",
-            "Frequenzanotifica": "Mai",
-            "Listaamici": [1,3,4,5],
-            "Messaggioautomatico": false,
-            "Numerotelefono": null,
-            "Testo": null,
-            "Orario": null,
-            "Fusi-orari": "disattivato"
-        }
-
-    ]
+{"ev":{"Eventi":[{"ID":0,"Data":"22/10/2022","Titolo":"prova","LivelloDiPriorita":"alta","Categoria":"pallone","Descrizione":"Prova","Fasciaoraria":"Tutto il giorno","Frequenza":"una volta","Frequenzanotifica":"Mai","Listaamici":[1,3,4,5],"Messaggioautomatico":true,"Numerotelefono":null,"Testo":null,"Orario":null,"Fusi-orari":"disattivato"},{"ID":1,"Data": "18/01/2022",
+                "Titolo": "Compleanno di Piergiorgio",
+                "LivelloDiPriorita": "bassa",
+                "Categoria": "Compleanno",
+                "Descrizione": "Festa al Bar Sport",
+                "Fasciaoraria": "19:00-21:00",
+                "Frequenza": "una volta",
+                "Frequenzanotifica": "Mai",
+                "Listaamici": [
+                    1,
+                    3,
+                    4,
+                    5
+                ],
+                "Messaggioautomatico": false,
+                "Numerotelefono": null,
+                "Testo": null,
+                "Orario": null,
+                "Fusi-orari": "disattivato"
+            },
+            {
+                "ID": 2,
+                "Data": "2021-12-09",
+                "Titolo": "Canippo",
+                "LivelloDiPriorita": "alta",
+                "Categoria": "Cose da fare",
+                "Descrizione": "matto",
+                "Fasciaoraria": "Tutto il giorno",
+                "Frequenza": "una volta",
+                "Frequenzanotifica": "Mai",
+                "Listaamici": [
+                    1,
+                    3,
+                    4,
+                    5
+                ],
+                "Messaggioautomatico": true,
+                "Numerotelefono": null,
+                "Testo": null,
+                "Orario": null,
+                "Fusi-orari": "disattivato"
+            }
+        ],
+        "LastId": 1
+    }
 }
