@@ -134,7 +134,7 @@ app.get('/api/userbyus/:user', (request, response) => {
 
 /**
  * @swagger
- * /api/userbyus/{id}:
+ * /api/userbyid/{id}:
  *   get:
  *     summary: Restituisce degli utenti.
  *     description: Restituisce degli utenti con un ID che combacia con il paramentro passato.
@@ -611,3 +611,5 @@ app.post('/api/eventi', (request, response) => {
 
     response.json("Prodotto Aggiunto Correttamente: (" + myObject.ev.Eventi.length + ")");
 })
+
+module.exports = app;
