@@ -84,7 +84,7 @@ const impostazioni = {
             lingua: "",
             categoria: [],
             modalita: "true",
-            notifica: "fasle"
+            notifica: "false"
         }
     },
     methods: {
