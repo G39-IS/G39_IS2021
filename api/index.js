@@ -533,6 +533,7 @@ app.put('/api/eventi/:id', (request, response) => {
             myObject.ev.Eventi[i].Titolo=request.body['Titolo'];
             myObject.ev.Eventi[i].LivelloDiPriorita=request.body['LivelloDiPriorita'];
             myObject.ev.Eventi[i].Categoria=request.body['Categoria'];
+           
         }
     }
 
@@ -598,7 +599,7 @@ app.post('/api/eventi', (request, response) => {
         "Orario": null,
         "Fusi-orari": "disattivato"
     };
-
+    myObject.ev.LastId=myObject.ev.LastId+1;
     //aggiunta nuovo elemento
     myObject.ev.Eventi.push(newevn);
 
@@ -609,7 +610,7 @@ app.post('/api/eventi', (request, response) => {
         if (err) throw err;
     });
 
-    response.json("Prodotto Aggiunto Correttamente: (" + myObject.ev.Eventi.length + ")");
+    response.json("Evento Aggiunto Correttamente: (" + myObject.ev.Eventi.length + ")");
 })
 
 module.exports = app;
